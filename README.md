@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Promotopia - Full Stack Web Application
 
-## Getting Started
+Promotopia is a full-stack web application built with **Next.js**, **MongoDB**, and **Tailwind CSS**. It allows users to create, share, and manage AI prompts for various use cases. The platform integrates **Google Authentication** for secure login and offers a seamless user experience.
 
-First, run the development server:
+## Features
+- **User Authentication**: Secure login using Google OAuth.
+- **CRUD Functionality**: Create, Read, Update, and Delete prompts.
+- **Responsive Design**: Fully responsive design using **Tailwind CSS**.
+- **SEO Optimization**: Implemented **Server-Side Rendering (SSR)** and **Static Site Generation (SSG)**.
+- **Real-Time Data Management**: Data is managed with **MongoDB** and **Mongoose**.
+- **RESTful API**: Efficient data retrieval with REST API.
+
+## Demo
+Here’s a quick demo of what the application looks like:
+
+![Promotopia Screenshot](./images/demo-screenshot.png)
+
+## Technologies Used
+- **Next.js** - React framework for building the user interface and handling routing.
+- **MongoDB** - NoSQL database for storing user data and prompts.
+- **Tailwind CSS** - Utility-first CSS framework for styling the UI.
+- **Google Authentication** - OAuth-based login for secure authentication.
+- **Mongoose** - ODM for MongoDB for managing data in a structured manner.
+- **Vercel** - Deployment platform used for hosting the application.
+
+## Setup
+
+### Prerequisites
+Make sure you have the following installed:
+- Node.js (version 14 or above)
+- MongoDB (or use MongoDB Atlas for cloud-based DB)
+- Git
+
+### Clone the Repository
+To clone the repository, run:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+git clone https://github.com/your-username/promotopia.git
