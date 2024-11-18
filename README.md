@@ -13,7 +13,7 @@ Promotopia is a full-stack web application built with **Next.js**, **MongoDB**, 
 ## Demo
 Here’s a quick demo of what the application looks like:
 
-![Promotopia Screenshot](./images/demo-screenshot.png)
+![Promotopia Screenshot](./readmeImg.png)
 
 ## Technologies Used
 - **Next.js** - React framework for building the user interface and handling routing.
