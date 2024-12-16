@@ -1,11 +1,11 @@
 "use client";
 
 import { useSession } from 'next-auth/react';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Form from '@components/Form';
 
-const EditPrompt = () => {
+const EditPromptContent = () => {
   const { data: session } = useSession();
   const searchParams = useSearchParams();
   const promptId = searchParams.get('id');
@@ -18,7 +18,7 @@ const EditPrompt = () => {
 
   useEffect(() => {
     const getPromptDetails = async () => {
-      if (!promptId) return; 
+      if (!promptId) return;
       try {
         const response = await fetch(`/api/prompt/${promptId}`);
         const data = await response.json();
@@ -65,16 +65,20 @@ const EditPrompt = () => {
   }
 
   return (
-    <div>
-      <Form
-        type="Edit"
-        post={post}
-        setPost={setPost}
-        submitting={submitting}
-        handelSubmit={updatePrompt}
-      />
-    </div>
+    <Form
+      type="Edit"
+      post={post}
+      setPost={setPost}
+      submitting={submitting}
+      handelSubmit={updatePrompt}
+    />
   );
 };
+
+const EditPrompt = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <EditPromptContent />
+  </Suspense>
+);
 
 export default EditPrompt;
