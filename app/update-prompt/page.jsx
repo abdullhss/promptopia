@@ -1,12 +1,13 @@
 "use client";
 
 import { useSession } from 'next-auth/react';
-import React, { useEffect, useState, Suspense } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import Form from '@components/Form';
 
 const EditPrompt = () => {
   const router = useRouter();
+  const { id: promptId } = router.query;
   const { data: session } = useSession();
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
@@ -14,11 +15,9 @@ const EditPrompt = () => {
     tag: '',
   });
 
-  const searchParams = useSearchParams();
-  const promptId = searchParams.get('id');
-
   useEffect(() => {
     const getPromptDetails = async () => {
+      if (!promptId) return;
       const response = await fetch(`/api/prompt/${promptId}`);
       const data = await response.json();
 
@@ -28,9 +27,7 @@ const EditPrompt = () => {
       });
     };
 
-    if (promptId) {
-      getPromptDetails();
-    }
+    getPromptDetails();
   }, [promptId]);
 
   const updatePrompt = async (e) => {
@@ -59,11 +56,9 @@ const EditPrompt = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div>
-        <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handelSubmit={updatePrompt} />
-      </div>
-    </Suspense>
+    <div>
+      <Form type="Edit" post={post} setPost={setPost} submitting={submitting} handelSubmit={updatePrompt} />
+    </div>
   );
 };
 
