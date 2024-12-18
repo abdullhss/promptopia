@@ -67,6 +67,8 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  console.log(allPosts);
+  
   return (
     <section className='feed'>
       <form className='relative w-full flex-center'>
@@ -87,7 +89,7 @@ const Feed = () => {
           handleTagClick={handleTagClick}
         />
       ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
       )}
     </section>
   );
