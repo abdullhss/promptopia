@@ -7,7 +7,6 @@ export const metadata = {
     description : "Discover & Share AI Prompts "
 }
 
-export const dynamic = 'force-dynamic';
 
 export default function RootLayout({children}) {
   return (
